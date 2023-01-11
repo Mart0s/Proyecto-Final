@@ -1,0 +1,119 @@
+{% extends 'mi_blog/base.html' %}
+
+{% block contenido %}
+<div class="container">
+    <div class="row">
+        <!-- Blog entries-->
+        <div class="col-lg-8">
+            {% if posts %}
+                <!-- Featured blog post-->
+                <div class="card mb-4">
+                    {% if posts.0 %}
+                    <a href="{% url 'mi_blog_detalle' posts.0.id %}"><img class="card-img-top" src="{{posts.0.imagen.url}}" alt="..." /></a>
+                    <div class="card-body">
+                        <div class="small text-muted">{{posts.0.fecha_publicacion}}</div>
+                        <h2 class="card-title">{{posts.0.titulo}}</h2>
+                        <p class="card-text">{{posts.0.sub_titulo}}</p>
+                        <a class="btn btn-primary" href="{% url 'mi_blog_detalle' posts.0.id %}">Leer más</a>
+                    </div>
+                    {% endif %}
+                </div>
+                <!-- Nested row for non-featured blog posts-->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- Blog post-->
+                        <div class="card mb-4">
+                            {% if posts.1 %}
+                            <a href="{% url 'mi_blog_detalle' posts.1.id %}"><img class="card-img-top" src="{{posts.1.imagen.url}}" alt="..." /></a>
+                            <div class="card-body">
+                                <div class="small text-muted">{{posts.1.fecha_publicacion}}</div>
+                                <h2 class="card-title">{{posts.1.titulo}}</h2>
+                                <p class="card-text">{{posts.1.sub_titulo}}</p>
+                                <a class="btn btn-primary" href="{% url 'mi_blog_detalle' posts.1.id %}">Leer más</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <!-- Blog post-->
+                        <div class="card mb-4">
+                            {% if posts.2 %}
+                            <a href="{% url 'mi_blog_detalle' posts.2.id %}"><img class="card-img-top" src="{{posts.2.imagen.url}}" alt="..." /></a>
+                            <div class="card-body">
+                                <div class="small text-muted">{{posts.2.fecha_publicacion}}</div>
+                                <h2 class="card-title">{{posts.2.titulo}}</h2>
+                                <p class="card-text">{{posts.2.sub_titulo}}</p>
+                                <a class="btn btn-primary" href="{% url 'mi_blog_detalle' posts.2.id %}">Leer más</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Blog post-->
+                        <div class="card mb-4">
+                            {% if posts.3 %}
+                            <a href="{% url 'mi_blog_detalle' posts.3.id %}"><img class="card-img-top" src="{{posts.3.imagen.url}}" alt="..." /></a>
+                            <div class="card-body">
+                                <div class="small text-muted">{{posts.3.fecha_publicacion}}</div>
+                                <h2 class="card-title">{{posts.3.titulo}}</h2>
+                                <p class="card-text">{{posts.3.sub_titulo}}</p>
+                                <a class="btn btn-primary" href="{% url 'mi_blog_detalle' posts.3.id %}">Leer más</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <!-- Blog post-->
+                        <div class="card mb-4">
+                            {% if posts.4 %}
+                            <a href="{% url 'mi_blog_detalle' posts.4.id %}"><img class="card-img-top" src="{{posts.4.imagen.url}}" alt="..." /></a>
+                            <div class="card-body">
+                                <div class="small text-muted">{{posts.4.fecha_publicacion}}</div>
+                                <h2 class="card-title">{{posts.4.titulo}}</h2>
+                                <p class="card-text">{{posts.4.sub_titulo}}</p>
+                                <a class="btn btn-primary" href="{% url 'mi_blog_detalle' posts.4.id %}">Leer más</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <h1>No hay posteos</h1>
+            {% endif %}
+        </div>
+        <!-- Side widgets-->
+        <div class="col-lg-4">
+            <!-- Search widget-->
+            <div class="card mb-4">
+                <div class="card-header">Buscar</div>
+                <div class="card-body">
+                    <form method= 'get'>
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="buscar" placeholder="Buscar..." aria-label="Buscar..." aria-describedby="button-search" />
+                            <button class="btn btn-primary" id="button-search" type="submit">Buscar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Categories widget-->
+            <div class="card mb-4">
+                <div class="card-header">Redes sociales y otros</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="www.youtube.com/@AfterSanAndreas">Youtube</a></li>
+                                <li><a href="https://after-san-andreas.jimdosite.com">Página oficial</a></li>
+                                <li><a href="https://dyom.gtagames.nl/profile/32153">Página de DYOM</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="https://www.gtainside.com/user/AfterSanAndreas">Página de GTAinside</a></li>
+                                <li><a href="https://discord.gg/FNcEG3drfy">Server de Discord</a></li>
+                                <li><a href="https://twitter.com/AfterSanAndreas">Twitter</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

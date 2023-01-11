@@ -1,0 +1,24 @@
+{% extends 'mi_blog/base.html' %}
+
+{% block contenido %}
+<div class='container'>
+    <div>
+        <h1 class="fw-bolder">{{object.titulo}}</h1>
+    </div>
+        <p class="lead mb-0">
+            <h4 >{{object.sub_titulo}}</h4>
+        </p>
+    <div style="text-align: center">
+        <p>
+            <img src="{{object.imagen.url}}" height="500">
+        </p>
+    </div>
+    <div style="text-align: justify">
+        <p>
+            {{object.texto}}
+        </p>
+        <p style="text-align: right; font-weight: bold;"> Autor: {{object.autor}}</p>
+    </div>
+</div>
+
+{% endblock %}
