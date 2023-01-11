@@ -4,7 +4,7 @@ El proyecto trata de una página web enfocada a recopilar logotipos creados por 
 La información es almacenada en la base de datos, y se puede chequear en todo momento. 
 
 # Video Demostración.
-https://youtu.be/-H87qxX9Zgs
+https://youtu.be/0ZR08VEZNOY
 
 _______________________________________________________________________________________________________________________________________________________________________
 # DOCUMENTACIÓN.
